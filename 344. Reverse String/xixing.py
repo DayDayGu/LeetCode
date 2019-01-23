@@ -6,7 +6,7 @@ class Solution:
         """
         str_len = len(s)
         if str_len <= 1:
-            return;
+            return
         
         for i in range(0, str_len//2):
             s[i], s[str_len -1 -i] = s[str_len -1 -i], s[i]
