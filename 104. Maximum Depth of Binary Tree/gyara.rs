@@ -20,12 +20,13 @@ use std::rc::Rc;
 use std::cell::RefCell;
 impl Solution {
     pub fn dfs(root: &Option<Rc<RefCell<TreeNode>>>, depth: i32) -> i32 {
-        if let Some(node) = root {
-            let l = Solution::dfs(&node.borrow().left, depth);
-            let r = Solution::dfs(&node.borrow().right, depth);
-            return std::cmp::max(l, r) + 1;
-        } else {
-            return depth;
+        match root {
+            Some(node) => {
+                let l = Solution::dfs(&node.borrow().left, depth);
+                let r = Solution::dfs(&node.borrow().right, depth);
+                std::cmp::max(l, r) + 1
+            },
+            None => depth,
         }
     }
 
