@@ -7,13 +7,12 @@ impl Solution {
         for i in 1..res.len() {
             res[i] *= res[i-1];
         }
-        for i in 0..res.len() {
-            let j = res.len() - i - 1;
-            if j > 0 {
-                res[j] = res[j-1] * r;
-                r *= nums[j];
+        for i in (0..res.len()).rev() {
+            if i > 0 {
+                res[i] = res[i-1] * r;
+                r *= nums[i];
             } else {
-                res[j] = r;
+                res[i] = r;
             }
         }
         res
