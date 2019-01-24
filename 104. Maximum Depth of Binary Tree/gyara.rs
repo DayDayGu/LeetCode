@@ -19,18 +19,18 @@
 use std::rc::Rc;
 use std::cell::RefCell;
 impl Solution {
-    pub fn dfs(root: &Option<Rc<RefCell<TreeNode>>>, depth: i32) -> i32 {
+    pub fn dfs(root: &Option<Rc<RefCell<TreeNode>>>) -> i32 {
         match root {
             Some(node) => {
-                let l = Solution::dfs(&node.borrow().left, depth);
-                let r = Solution::dfs(&node.borrow().right, depth);
+                let l = Solution::dfs(&node.borrow().left);
+                let r = Solution::dfs(&node.borrow().right);
                 std::cmp::max(l, r) + 1
             },
-            None => depth,
+            None => 0,
         }
     }
 
     pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        return Solution::dfs(&root, 0);
+        return Solution::dfs(&root);
     }
 }
