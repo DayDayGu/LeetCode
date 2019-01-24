@@ -30,7 +30,6 @@ impl Solution {
     }
 
     pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        let mut res: i32 = 0;
         return Solution::dfs(&root, 0);
     }
 }
