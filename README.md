@@ -1,6 +1,6 @@
 # LeetCode 刷题 咕咕咕
 
-暂定以 `E E E M M H` 的顺序做题
+暂定以 `E E E M M H(M)` 的顺序做题
 
 组内所有人完成代码并提交后进入下一题
 
@@ -14,5 +14,7 @@ M 046. Permutations
 H 042. Trapping Rain Water  
 E 136. Single Number  
 E 283. Move Zeroes  
-E 206. Reverse Linked List  
-M 454. 4Sum II  
+E 206. Reverse Linked List
+M 454. 4Sum II
+M 230. Kth Smallest Element in a BST
+M 938. Range Sum of BST
