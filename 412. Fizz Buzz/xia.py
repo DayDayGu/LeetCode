@@ -6,7 +6,7 @@ class Solution:
         i = 1
         j = 1
         while ( ( 3*i<=n ) ):
-            gens_3.append( 3*i )
+            gens_3.append( 3*i )        
             i += 1
 
         while ( ( 5*j<=n ) ):
