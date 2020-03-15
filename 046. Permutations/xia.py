@@ -1,20 +1,21 @@
 class Solution:
-    def permute(self, nums):
-        list_length = len(nums)
-        if list_length == 1:
-            return [ nums ]
-        indics = [ i for i in range(list_length) ] 
-        permute_result = [] 
-        for step in range(list_length):
-            pre_index = 0
-            while(pre_index < list_length - 1):
-                permute_result.append(
-                    [ nums[i] for i in indics ] 
-                )
-                indics[pre_index], indics[pre_index + 1] = indics[pre_index + 1], indics[pre_index]
-                pre_index += 1
-        return permute_result
-             
-s = Solution()
 
-print(len(s.permute([5, 4, 6, 2])))
+    def _per(self, current_nums, all_permution_list, current_permution_list = []):
+        if len(current_nums) == 0:
+            all_permution_list.append([ *current_permution_list ])
+        else:
+            for i in current_nums:
+                new_nums = [ v for v in filter(lambda item: item != i, current_nums) ] 
+                current_permution_list.append(i)
+                self._per(new_nums, all_permution_list, current_permution_list)
+                current_permution_list.pop()
+
+    def permute(self, nums):
+        all_permution_list = []
+        self._per(nums, all_permution_list, current_permution_list = [])
+        return all_permution_list
+
+            
+# test code
+# s = Solution()
+# print(s.permute([1, 2, 3, 4, 5, 6]))
