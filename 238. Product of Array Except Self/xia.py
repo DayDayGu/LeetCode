@@ -13,5 +13,5 @@ class Solution:
             answer[i] = answer[i] * R 
             R *= nums[i]
 
-        return answer
+        return answers
             
